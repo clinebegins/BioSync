@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste Listings - BioSync</title>
+</head>
+<body>
+    <h1>Waste Listings</h1>
+    {% if wastes %}
+        <ul>
+        {% for w in wastes %}
+            <li><b>{{ w.name }}</b> - {{ w.quantity }} kg ({{ w.location }})</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No waste listings yet.</p>
+    {% endif %}
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>
