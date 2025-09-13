@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fertilizer Listings - BioSync</title>
+</head>
+<body>
+    <h1>Fertilizer Listings</h1>
+    {% if fertilizers %}
+        <ul>
+        {% for f in fertilizers %}
+            <li><b>{{ f.name }}</b> - {{ f.quantity }} kg - ₹{{ f.price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No fertilizer listings yet.</p>
+    {% endif %}
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>
